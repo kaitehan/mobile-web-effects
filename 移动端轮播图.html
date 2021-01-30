@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 声明字体图标 注意路径变化*/
+        @font-face {
+            font-family: 'icomoon';
+            src: url('./fonts/icomoon.eot?qqoetm');
+            src: url('./fonts/icomoon.eot?qqoetm#iefix') format('embedded-opentype'),
+                url('./fonts/icomoon.ttf?qqoetm') format('truetype'),
+                url('./fonts/icomoon.woff?qqoetm') format('woff'),
+                url('./fonts/icomoon.svg?qqoetm#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        /* 把所有标签的内外边距清零 */
+        * {
+            margin: 0;
+            padding: 0;
+            /* css3盒子模型 */
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 3000px;
+        }
+
+        .search {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 30px;
+            background-color: #fff;
+            z-index: 99999;
+        }
+        .main {
+            position: absolute;
+            left: 0;
+            top: 30px;
+            height: 3000px;
+        }
+
+        div {
+            position: relative;
+            width: 375px;
+            height: 100px;
+            background-color: pink;
+            overflow: hidden;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        ul {
+            /* position: relative; */
+            width: 500%;
+            height: 100%;
+            margin-left: -100%;
+            overflow: hidden;
+        }
+
+        ul li {
+            float: left;
+            width: 20%;
+            height: 100%;
+        }
+
+        ol {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            /* background-color: rgba(219, 215, 215, 0.5); */
+        }
+
+        ol li {
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            background-color: #fff;
+            border-radius: 2.5px;
+            transition: all .3s;
+        }
+
+        /* 返回顶部按钮 */
+        .goBack {
+            display: none;
+            position: fixed;
+            bottom: 50px;
+            right: 20px;
+            width: 38px;
+            height: 38px;
+            font-family: 'icomoon';
+            text-align: center;
+            line-height: 38px;
+            color: #333;
+            border-radius: 19px;
+            background-color: #ddd;
+            text-decoration: none;
+            z-index: 99;
+        }
+
+        .first {
+            width: 100%;
+            height: 300px;
+            background-color: #ddd;
+        }
+
+        .second {
+            width: 100%;
+            height: 2000px;
+            background-color: pink;
+        }
+
+        .current {
+            width: 15px;
+        }
+    </style>
+    <script src="./js/淘宝flexible分析.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/goback.js"></script>
+</head>
+
+<body>
+    <a href="#" class="goBack"></a>
+    <div class="search"></div>
+    <div class="main">
+        <div class="box">
+            <ul>
+                <li style="background-color: royalblue;"></li>
+                <li style="background-color: red;"></li>
+                <li style="background-color: #ccc;"></li>
+                <li style="background-color: royalblue;"></li>
+                <li style="background-color: red;"></li>
+            </ul>
+            <ol>
+                <li class="current"></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+        <div class="first"></div>
+        <div class="second"></div>
+    </div>
+
+
+</body>
+
+</html>
